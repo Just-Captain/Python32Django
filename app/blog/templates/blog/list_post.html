@@ -3,10 +3,12 @@
 {% block content %}
 
 {% for post in posts %}
-    <p>{{ post.title }}</p>
+    <a href="{% url 'detail_post' post.pk %}">{{ post.title }}</a>
     <p>{{ post.description }}</p>
     <p>{{ post.create_date }}</p>
     <br>
+    <button><a href="{% url 'edit_post' post.pk %}">Редактировать</a></button>
+    <button><a href="{% url 'delete_post' post.pk %}">Удалить</a></button>
 {% endfor %}
 
 
